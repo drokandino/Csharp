@@ -15,7 +15,6 @@ namespace Geometrija
         {
             this.radius = 10;
             ishodiste = new Tocka();
-            ishodiste.setXY(0, 0);
         }
         public Kruznica(int x, int y, double radius)
         {
