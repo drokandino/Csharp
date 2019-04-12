@@ -9,7 +9,7 @@ namespace Geometrija
     class Kruznica
     {
         private Tocka ishodiste = null;
-        private double radius;
+        protected  double radius;
 
         public Kruznica()
         {
@@ -23,7 +23,12 @@ namespace Geometrija
         }
 
         //getRadius(), setRadius() ...
-        public Tocka getIshodiste() { return this.ishodiste; }
+        //public Tocka getIshodiste() { return this.ishodiste; }
+        public Tocka Ishodiste
+        {
+            get { return ishodiste; }
+            set { ishodiste = value; }
+        }
 
         public double udaljenostOd(Kruznica kruznica) //Vraca udaljenost od ishodista kruznice iz argumenta metode
         {

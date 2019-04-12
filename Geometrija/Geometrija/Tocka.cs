@@ -30,8 +30,19 @@ namespace Geometrija
             return Math.Sqrt(Math.Pow(tocka.x - this.x, 2) + Math.Pow(tocka.y - this.y, 2));
         }
 
-        public int getX() { return this.x; }
-        public int getY() { return this.y; }
+        //public int getX() { return this.x; }
+        //public int getY() { return this.y; }
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
         public int[] getXY()
         {
             int[] xy = new int[2];
@@ -40,8 +51,8 @@ namespace Geometrija
             return xy;
         }
 
-        public void setX(int x) { this.x = x; }
-        public void setY(int y) { this.y = y; }
+        //public void setX(int x) { this.x = x; }
+        //public void setY(int y) { this.y = y; }
         public void setXY(int x, int y)
         {
             this.x = x;
