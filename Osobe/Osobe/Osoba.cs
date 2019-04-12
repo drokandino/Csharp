@@ -24,9 +24,12 @@ namespace Osobe
             this.ime_prezime = ime_prezime;
         }
 
-        public void setStarost(int starost) { this.starost = starost; }
-
-        public int getStarost() { return this.starost; }
-      //  public override string ToString() { return ime_prezime; }
+        public int Starost
+        {
+            get { return starost; }
+            set { starost = value; }
+        }
+      
+        //  public override string ToString() { return ime_prezime; }
     }
 }

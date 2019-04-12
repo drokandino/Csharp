@@ -24,15 +24,25 @@ namespace Banka
             this.balance = balance;
         }
 
-        public string getId() { return id; }
-        public string getName() { return name; }
-        public int getBalance() { return balance; }
+        public string Id
+        {
+            get { return id; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public int Balance
+        {
+            get { return Balance; }
+        }
 
         public int dodajNaRacun(int vrijednost)
         {
             if(vrijednost <= 0)
             {
-                Console.Write("Ne mozete prebaciti " + vrijednost + " na racun osobe" + this.getName() );
+                Console.Write("Ne mozete prebaciti " + vrijednost + " na racun osobe" + Name );
                 return -1;
             }
             else { this.balance += vrijednost; }
