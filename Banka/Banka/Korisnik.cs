@@ -8,8 +8,8 @@ namespace Banka
 { 
     public class Korisnik
     {
-        private string id, name;
-        private int balance = 0;
+        protected string id, name;
+        protected int balance = 0;
 
         public Korisnik(string id, string name)
         {
@@ -67,6 +67,11 @@ namespace Banka
             drugi_korisnik.dodajNaRacun(vrijednost);
 
             return this.balance;
+        }
+
+        public virtual void naknadaZaVodenjeRacuna()
+        {
+            balance -= 10;
         }
 
         public override string ToString()
