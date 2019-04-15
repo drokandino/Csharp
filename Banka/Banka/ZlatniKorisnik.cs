@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banka
 {
-    class ZlatniKorisnik : Korisnik
+    class ZlatniKorisnik : Korisnik // Mora li ZlatniKorisnik implementirati IKorisnik?
     {
         private string kategorija;
 

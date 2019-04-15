@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banka
 { 
-    public class Korisnik
+    public class Korisnik : IKorisnik
     {
         protected string id, name;
         protected int balance = 0;
