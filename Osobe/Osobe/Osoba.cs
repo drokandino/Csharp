@@ -31,7 +31,7 @@ namespace Osobe
             set { starost = value; }
         }
       
-        //  public override string ToString() { return ime_prezime; }
+        public override string ToString() { return ime_prezime + " " + starost; }
     }
 
     public class Osobe : IEnumerable //Koristi se samo za iteraciju kroz listu
