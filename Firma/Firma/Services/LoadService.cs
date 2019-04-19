@@ -8,7 +8,7 @@ namespace Firma
 {
     class LoadService
     {
-        public LoadCompanies() { }
-        public LoadUsers() { }
+        public void LoadCompanies() { }
+        public void LoadUsers() { }
     }
 }

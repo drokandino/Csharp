@@ -22,7 +22,36 @@ namespace Firma
             DoB = dob;
             Company = company;
         }
-
-
+        
+        public Guid id
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
+        public Guid companyId
+        {
+            get { return CompanyId; }
+            set { CompanyId = value; }
+        }
+        public string firstName
+        {
+            get { return FirstName; }
+            set { FirstName = value; }
+        }
+        public string lastName
+        {
+            get { return LastName; }
+            set { LastName = value; }
+        }
+        public DateTime dob
+        {
+            get { return DoB; }
+            set { DoB = value; }
+        }
+        public Company company
+        {
+            get { return Company; }
+            set { Company = value; }
+        }
     }
 }
