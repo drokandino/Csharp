@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Text;
 using Newtonsoft.Json;
 
 
@@ -13,11 +12,17 @@ namespace Firma
 {
     class LoadService
     {
-       // private StreamReader citac = null;
-
+        public LoadService()
+        {
+            if (!File.Exists(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json") || 
+                !File.Exists(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json"))
+                throw new IOException();
+        }   
+        
         public List<Company> LoadCompanies()
         {
-            StreamReader citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json");
+            StreamReader citac = null;
+            citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json");
             List<Company> firme = new List<Company>();
 
             while (!citac.EndOfStream)
@@ -26,13 +31,13 @@ namespace Firma
 
             }
             citac.Close();
-
             return firme;
         }
 
         public static Company LoadCompany(/*Guid id*/ string name)
         {
-            StreamReader citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json");
+            StreamReader citac = null;
+            citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json");
             Company firma = null;
 
             while (!citac.EndOfStream)
@@ -42,13 +47,13 @@ namespace Firma
                 if (firma.name == name) break;
             }
             citac.Close();
-
             return firma;
         }
 
         public List<User> LoadUsers()
         {
-            StreamReader citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
+            StreamReader citac = null;
+            citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
             List<User> korisnici = new List<User>();
 
             while (!citac.EndOfStream)
@@ -56,14 +61,15 @@ namespace Firma
                 korisnici.Add(JsonConvert.DeserializeObject<User>(citac.ReadLine()));
             }
             citac.Close();
-
             return korisnici;
         }
         
         public User LoadUser(string name)
         {
-            StreamReader citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
+            StreamReader citac = null;
+            citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
             User korisnik = null;
+
             while (!citac.EndOfStream)
             {
                 korisnik = JsonConvert.DeserializeObject<User>(citac.ReadLine());
@@ -76,8 +82,10 @@ namespace Firma
 
         public User LoadUser(Guid id)
         {
-            StreamReader citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
+            StreamReader citac = null;
             User korisnik = null;
+            citac = new StreamReader(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Korisnici.json");
+
             while (!citac.EndOfStream)
             {
                 korisnik = JsonConvert.DeserializeObject<User>(citac.ReadLine());
