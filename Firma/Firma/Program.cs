@@ -37,19 +37,50 @@ namespace Firma
             spremac.AddUser("Bosko", "Bosic", DateTime.UtcNow, LoadService.LoadCompany("Rifit"));
             spremac.AddUser(korisnik);
             
-            firme = citac.LoadCompanies();
-            korisnici = citac.LoadUsers();
-            
-            korisnici.Add(citac.LoadUser(korisnik.id));
-
-            foreach(Company firhma in firme)
+            int izbor;
+            Boolean vrti = true;
+            while (vrti)
             {
-                Console.WriteLine(firhma.name);
-            }
+                Console.Write("1 - Dodavanje nove firme\n" +
+                              "2 - Dodavanje novog korisnika\n" +
+                              "3 - Ucitavanje firmi\n" +
+                              "4 - Ucitavanje korisnika\n" +
+                              "5 - Exit\n");
 
-            foreach(User user in korisnici)
-            {
-                Console.WriteLine(user.firstName);
+                izbor = Int32.Parse(Console.ReadLine());
+                switch (izbor)
+                {
+                    case 1:
+                        spremac.AddCompany();
+                        break;
+
+                    case 2:
+                        spremac.AddUser();
+                        break;
+
+                    case 3:
+                        firme = citac.LoadCompanies();
+                        foreach (Company firhma in firme)
+                        {
+                            Console.WriteLine(firhma.name);
+                        }
+                        break;
+
+                    case 4:
+                        korisnici = citac.LoadUsers();
+                        foreach (User user in korisnici)
+                        {
+                            Console.WriteLine(user.firstName);
+                        }
+                        break;
+                    case 5:
+                        vrti = false;
+                        break;
+
+                    default:
+                        break;
+
+                }
             }
         }
     }
