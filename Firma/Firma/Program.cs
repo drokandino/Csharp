@@ -28,7 +28,7 @@ namespace Firma
 
             List<User> korisnici = new List<User>();
             List<Company> firme = new List<Company>();
-
+    
             spremac.AddCompany("Optika Broz", "Nikole Tesle 55", "vat");
             spremac.AddCompany("RiFit", "Nikole Tesle 5", "vat");
             spremac.AddCompany(firma); 
@@ -59,7 +59,10 @@ namespace Firma
                         break;
 
                     case 3:
-                        firme = citac.LoadCompanies();
+                        try
+                        {
+                            firme = citac.LoadCompanies();
+                        }catch (NullReferenceException e) { Console.WriteLine("Array je prazan!"); }
                         foreach (Company firhma in firme)
                         {
                             Console.WriteLine(firhma.name);

@@ -24,7 +24,6 @@ namespace Firma
         public void AddCompany(string ime_firme, string adresa, string vat)
         {
             Company firma = new Company(Guid.NewGuid(), ime_firme, adresa, vat);
-
             pisac = File.AppendText(@"C:\Users\Dino\source\repos\Firma\Firma\Services\Firme.json");
             pisac.WriteLine(JsonConvert.SerializeObject(firma));
             pisac.Close();
