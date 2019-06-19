@@ -7,8 +7,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)     
         {
-            string ime = "Isus";
-            string prezime = "Krist", rastegnut_string = "   proba   ";
+            string ime = "Ana";
+            string prezime = "Anic", rastegnut_string = "   proba   ";
             string uredeni_string = ime.Replace("I", "P");
             uredeni_string = uredeni_string.Replace("s", "k");
 
@@ -22,7 +22,7 @@ namespace ConsoleApp1
             Console.WriteLine(recenica.Contains("je").ToString() + " " + recenica.Contains("ananas").ToString());
 
             var names = new List<string>  { "<name>", "DIno", "Darko"};
-            names.Add("Isus");
+            names.Add("Ana");
             names[1] = names[1].ToLower();
             foreach(var name in names)
             {
