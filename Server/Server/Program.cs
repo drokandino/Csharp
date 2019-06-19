@@ -11,7 +11,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
-
+            AsynchronousSocketListener server = new AsynchronousSocketListener();
+            server.StartListening();
 
         }
     }
